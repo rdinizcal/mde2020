@@ -13,8 +13,6 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="transport" eType="#//TransportStep"
         eOpposite="#//TransportStep/next"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="child" upperBound="-1"
-        eType="#//ManufacturingStep" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="startpoint" eType="#//StorageFacility"
         eOpposite="#//StorageFacility/endpoint"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="input" eType="#//WorkPiece"
