@@ -3,40 +3,53 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="assignment1" nsURI="http://www.example.org/assignment1" nsPrefix="assignment1">
   <eClassifiers xsi:type="ecore:EClass" name="ManufacturingSystem">
     <eStructuralFeatures xsi:type="ecore:EReference" name="manufacturingstep" lowerBound="1"
-        upperBound="-1" eType="#//ManufacturingStep" containment="true"/>
+        upperBound="-1" eType="#//manufacturingStep" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="startingpoint" lowerBound="1"
+        eType="#//StorageFacility" eOpposite="#//StorageFacility/endpoint"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Step" abstract="true" interface="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ManufacturingStep" eSuperTypes="#//Step">
+  <eClassifiers xsi:type="ecore:EClass" name="manufacturingStep" eSuperTypes="#//Step">
     <eStructuralFeatures xsi:type="ecore:EReference" name="quality" eType="#//QualityAssuranceStep"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="transport" eType="#//TransportStep"
         eOpposite="#//TransportStep/next"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="startpoint" eType="#//StorageFacility"
-        eOpposite="#//StorageFacility/endpoint"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="child" upperBound="-1"
-        eType="#//ManufacturingStep" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="output" lowerBound="1"
-        upperBound="-1" eType="#//WorkPiece"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="input" lowerBound="1" upperBound="-1"
-        eType="#//WorkPiece" containment="true" eOpposite="#//WorkPiece/belongs"/>
+        eType="#//manufacturingStep" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="endStorageFacuility" lowerBound="1"
+        eType="#//StorageFacility"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialStoragefacility"
+        lowerBound="1" eType="#//StorageFacility"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TransportStep" eSuperTypes="#//Step">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="next" lowerBound="1" eType="#//ManufacturingStep"
-        eOpposite="#//ManufacturingStep/transport"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="next" lowerBound="1" eType="#//manufacturingStep"
+        eOpposite="#//manufacturingStep/transport"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="QualityAssuranceStep" eSuperTypes="#//Step"/>
   <eClassifiers xsi:type="ecore:EClass" name="WorkPiece">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="belongs" lowerBound="1"
-        eType="#//ManufacturingStep" eOpposite="#//ManufacturingStep/input"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lhs" eType="#//BooleanExpression"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rhs" lowerBound="1" eType="#//BooleanExpression"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="belong" lowerBound="1"
+        eType="#//StorageFacility" eOpposite="#//StorageFacility/contains"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StorageFacility">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="endpoint" eType="#//ManufacturingStep"
-        eOpposite="#//ManufacturingStep/startpoint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contains" lowerBound="1"
+        upperBound="-1" eType="#//WorkPiece" containment="true" eOpposite="#//WorkPiece/belong"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="endpoint" lowerBound="1"
+        eType="#//ManufacturingSystem" eOpposite="#//ManufacturingSystem/startingpoint"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Person">
     <eStructuralFeatures xsi:type="ecore:EReference" name="responsability" eType="#//Step"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BooleanExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="#//Operation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Operation">
+    <eLiterals name="AND" literal="AND"/>
+    <eLiterals name="OR" value="1" literal="OR"/>
+    <eLiterals name="NOT" value="2" literal="NOT"/>
   </eClassifiers>
 </ecore:EPackage>
