@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assignment1:ManufacturingSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:assignment1="http://www.example.org/assignment1" name="Manufacturing Chain" startingpoint="//@storagefacility.0" endpoint="//@storagefacility.1">
+  <person name="Hanaa"/>
+  <person name="Razan"/>
+  <person name="Ricardo"/>
+  <storagefacility name="Initial" contains="//@workpiece.0 //@workpiece.1"/>
+  <storagefacility name="Ending" contains="//@workpiece.5"/>
+  <manufacturingstep name="Build Wooden Door and Cabient" duration="10" responsible="//@person.0" input="//@workpiece.0" output="//@workpiece.2 //@workpiece.3">
+    <child name="Build Door" duration="4" input="//@workpiece.0" output="//@workpiece.2">
+      <transportstep name="Take door to Mount Wardrobe" duration="8" source="//@manufacturingstep.0/@child.0" target="//@manufacturingstep.2" responsible="//@person.0"/>
+    </child>
+    <child name="Build Cabinet" duration="10" qualityAssurance="true" input="//@workpiece.0" output="//@workpiece.3">
+      <transportstep name="Take Cabinet to Mount Wardrobe" duration="2" source="//@manufacturingstep.0/@child.1" target="//@manufacturingstep.2" responsible="//@person.0"/>
+    </child>
+  </manufacturingstep>
+  <manufacturingstep name="Build Metal Grip" duration="3" qualityAssurance="true" responsible="//@person.1" input="//@workpiece.1" output="//@workpiece.4">
+    <transportstep name="Take Metal Grip to Mount Wardrobe" duration="1" source="//@manufacturingstep.1" target="//@manufacturingstep.2" responsible="//@person.1"/>
+  </manufacturingstep>
+  <manufacturingstep name="Mount Wardrobe" duration="1" qualityAssurance="true" responsible="//@person.2" input="//@workpiece.4 //@workpiece.3 //@workpiece.2" output="//@workpiece.5"/>
+  <workpiece type="Raw Wood" belongs="//@storagefacility.0"/>
+  <workpiece type="Raw Metal" belongs="//@storagefacility.0"/>
+  <workpiece type="Wooden Door"/>
+  <workpiece type="Wooden Cabinet"/>
+  <workpiece type="Metal Grip"/>
+  <workpiece type="Wardrobe" belongs="//@storagefacility.1"/>
+</assignment1:ManufacturingSystem>
