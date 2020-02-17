@@ -28,7 +28,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
         eType="#//ManufacturingStep"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="WorkPiece" eSuperTypes="#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="WorkPiece" eSuperTypes="#//NamedElement #//Expression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StorageFacility" eSuperTypes="#//NamedElement">
