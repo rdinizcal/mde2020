@@ -10,8 +10,8 @@
         eType="#//StorageFacility"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="endpoint" lowerBound="1"
         eType="#//StorageFacility"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="compose" lowerBound="1"
-        upperBound="-1" eType="#//Step" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="step" lowerBound="1" upperBound="-1"
+        eType="#//Step" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="contains" upperBound="-1"
         eType="#//Expression" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="workpiece" lowerBound="1"
@@ -28,7 +28,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
         eType="#//ManufacturingStep"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="WorkPiece" eSuperTypes="#//Expression #//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="WorkPiece" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StorageFacility" eSuperTypes="#//NamedElement">
@@ -50,9 +50,9 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="input" lowerBound="1" upperBound="-1"
-        eType="#//WorkPiece"/>
+        eType="#//Expression"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="output" lowerBound="1"
-        upperBound="-1" eType="#//WorkPiece"/>
+        upperBound="-1" eType="#//Expression"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="responsible" eType="#//Person"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="QualityAssurance" eSuperTypes="#//Step"/>
@@ -76,6 +76,6 @@
       <details key="archetype" value="Description"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="literal" lowerBound="1"
-        upperBound="-1" eType="#//WorkPiece"/>
+        eType="#//WorkPiece"/>
   </eClassifiers>
 </ecore:EPackage>
