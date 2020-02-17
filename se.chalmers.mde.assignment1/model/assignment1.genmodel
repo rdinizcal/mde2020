@@ -27,8 +27,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assignment1.ecore#//ManufacturingSystem/workpiece"/>
     </genClasses>
     <genClasses ecoreClass="assignment1.ecore#//ManufacturingStep">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assignment1.ecore#//ManufacturingStep/transportstep"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assignment1.ecore#//ManufacturingStep/end"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assignment1.ecore#//ManufacturingStep/chain"/>
     </genClasses>
     <genClasses ecoreClass="assignment1.ecore#//TransportStep">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assignment1.ecore#//TransportStep/source"/>
@@ -48,7 +48,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment1.ecore#//Step/duration"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assignment1.ecore#//Step/input"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assignment1.ecore#//Step/output"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assignment1.ecore#//Step/chain"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assignment1.ecore#//Step/responsible"/>
     </genClasses>
     <genClasses ecoreClass="assignment1.ecore#//QualityAssurance"/>
