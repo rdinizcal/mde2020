@@ -3,14 +3,6 @@
   <viewpoint:DAnalysis uid="_6ClZ4EgCEeqDVoK9zW_JKQ" selectedViews="_6QLxAEgCEeqDVoK9zW_JKQ _yvreEEgwEeqAGJAOO96iOA _ywbE8EgwEeqAGJAOO96iOA _yyYMwEgwEeqAGJAOO96iOA" version="14.3.0.201909031200">
     <semanticResources>assignment1.ecore</semanticResources>
     <semanticResources>assignment1.genmodel</semanticResources>
-    <semanticResources>ManufacturingSystem.xmi</semanticResources>
-    <semanticResources>ManufacturingSystem1.xmi</semanticResources>
-    <semanticResources>ManufacturingSystem2.xmi</semanticResources>
-    <semanticResources>ManufacturingSystem3.xmi</semanticResources>
-    <semanticResources>ManufacturingSystem4.xmi</semanticResources>
-    <semanticResources>ManufacturingSystem5.xmi</semanticResources>
-    <semanticResources>ManufacturingSystem6.xmi</semanticResources>
-    <semanticResources>ManufacturingSystem7.xmi</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_6QLxAEgCEeqDVoK9zW_JKQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_6UawwEgCEeqDVoK9zW_JKQ" name="assignment1" repPath="#_6Rn7cEgCEeqDVoK9zW_JKQ" changeId="849db86d-5d27-46a7-bc24-74ac33ac26cb">
