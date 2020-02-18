@@ -60,8 +60,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment1.ecore#//UnaryExpression/op"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assignment1.ecore#//UnaryExpression/lhs"/>
     </genClasses>
-    <genClasses ecoreClass="assignment1.ecore#//Expression">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assignment1.ecore#//Expression/literal"/>
-    </genClasses>
+    <genClasses ecoreClass="assignment1.ecore#//Expression"/>
   </genPackages>
 </genmodel:GenModel>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ExportRepresentationsAsImagesDialog">
+		<item key="ExportRepresentationsAsImagesDialog.imageFormat" value="PNG"/>
+		<list key="ExportRepresentationsAsImagesDialog.file">
+			<item value="/home/dinizr/phd/courses/mde/code/se.chalmers.mde.assignment1/model"/>
+			<item value="/home/dinizr/phd/courses/mde/code/se.chalmers.mde.assignment1/model/metamodel.png"/>
+		</list>
+	</section>
+</section>

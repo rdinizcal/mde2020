@@ -75,7 +75,5 @@
     <eAnnotations source="http://www.obeo.fr/dsl/dnc/archetype">
       <details key="archetype" value="Description"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="literal" lowerBound="1"
-        eType="#//WorkPiece"/>
   </eClassifiers>
 </ecore:EPackage>

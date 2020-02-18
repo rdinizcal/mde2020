@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/se.chalmers.mde.assignment1/src-gen" creationIcons="false"
+    editDirectory="/se.chalmers.mde.assignment1.edit/src-gen" editorDirectory="/se.chalmers.mde.assignment1.editor/src-gen"
+    modelPluginID="se.chalmers.mde.assignment1" modelName="Assignment1" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>assignment1.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Assignment1" basePackage="se.chalmers.mde" disposableProviderFactory="true"
+      ecorePackage="assignment1.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="assignment1.ecore#//Operation">
+      <genEnumLiterals ecoreEnumLiteral="assignment1.ecore#//Operation/AND"/>
+      <genEnumLiterals ecoreEnumLiteral="assignment1.ecore#//Operation/OR"/>
+      <genEnumLiterals ecoreEnumLiteral="assignment1.ecore#//Operation/NOT"/>
+    </genEnums>
+    <genClasses ecoreClass="assignment1.ecore#//ManufacturingSystem">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assignment1.ecore#//ManufacturingSystem/person"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assignment1.ecore#//ManufacturingSystem/storagefacility"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assignment1.ecore#//ManufacturingSystem/startingpoint"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assignment1.ecore#//ManufacturingSystem/endpoint"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assignment1.ecore#//ManufacturingSystem/manufacturingstep"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assignment1.ecore#//ManufacturingSystem/workpiece"/>
+    </genClasses>
+    <genClasses ecoreClass="assignment1.ecore#//ManufacturingStep">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assignment1.ecore#//ManufacturingStep/child"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment1.ecore#//ManufacturingStep/duration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment1.ecore#//ManufacturingStep/qualityAssurance"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assignment1.ecore#//ManufacturingStep/responsible"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assignment1.ecore#//ManufacturingStep/transportstep"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assignment1.ecore#//ManufacturingStep/input"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assignment1.ecore#//ManufacturingStep/output"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment1.ecore#//ManufacturingStep/inputCondition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment1.ecore#//ManufacturingStep/outputCondition"/>
+    </genClasses>
+    <genClasses ecoreClass="assignment1.ecore#//TransportStep">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment1.ecore#//TransportStep/duration"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assignment1.ecore#//TransportStep/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assignment1.ecore#//TransportStep/target"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assignment1.ecore#//TransportStep/responsible"/>
+    </genClasses>
+    <genClasses ecoreClass="assignment1.ecore#//WorkPiece">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment1.ecore#//WorkPiece/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assignment1.ecore#//WorkPiece/belongs"/>
+    </genClasses>
+    <genClasses ecoreClass="assignment1.ecore#//StorageFacility">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assignment1.ecore#//StorageFacility/contains"/>
+    </genClasses>
+    <genClasses ecoreClass="assignment1.ecore#//Person"/>
+    <genClasses ecoreClass="assignment1.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment1.ecore#//NamedElement/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

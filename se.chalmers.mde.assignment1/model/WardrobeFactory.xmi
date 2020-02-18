@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assignment1:ManufacturingSystem
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:assignment1="http://www.example.org/assignment1"
+    xsi:schemaLocation="http://www.example.org/assignment1 assignment1.ecore">
+  <employee
+      name="Hanaa"/>
+  <employee
+      name="Razan"/>
+  <employee
+      name="Ricardo"/>
+  <employee
+      name="Wardah"/>
+  <step xsi:type="assignment1:ManufacturingStep"
+      name="Build side shelves"
+      duration="2"
+      input="//@contains.1"
+      output="//@contains.0"
+      responsible="//@employee.0">
+    <chain xsi:type="assignment1:QualityAssurance"
+        name="Check the width and height of the shelves"/>
+    <chain xsi:type="assignment1:TransportStep"
+        name="Transport side shelves to Assembling Unit"/>
+  </step>
+  <step xsi:type="assignment1:ManufacturingStep"
+      name="Build shoe rack"
+      duration="2"
+      input="//@contains.1/@lhs"
+      output="//@contains.4"
+      responsible="//@employee.1">
+    <chain xsi:type="assignment1:TransportStep"
+        name="Transport shoe rack to Assembling Unit"/>
+  </step>
+  <step xsi:type="assignment1:ManufacturingStep"
+      name="Build main cabinet"
+      duration="3"
+      output="//@contains.3"
+      responsible="//@employee.2">
+    <chain xsi:type="assignment1:ManufacturingStep"
+        name="Build iron rod"
+        duration="1"
+        input="//@contains.1/@rhs"
+        output="//@contains.2"
+        responsible="//@employee.3"
+        end="//@step.2/@chain.0/@chain.0">
+      <chain
+          xsi:type="assignment1:QualityAssurance"
+          name="Ckeck if the rod fits the cabinet"/>
+      <chain
+          xsi:type="assignment1:TransportStep"
+          name="Transport iron rod to Assembling Unit"/>
+    </chain>
+    <chain xsi:type="assignment1:TransportStep"
+        name="Transport main cabinet to Assembling Unit"/>
+  </step>
+  <step xsi:type="assignment1:ManufacturingStep"
+      name="Build door"
+      duration="2"
+      output="//@contains.5"
+      responsible="//@employee.0"
+      end="//@step.4">
+    <chain xsi:type="assignment1:TransportStep"
+        name="Transport door to Assembling Unit"/>
+  </step>
+  <step xsi:type="assignment1:QualityAssurance"
+      name="Check if the door fits the assembled wardrobe"/>
+  <step xsi:type="assignment1:QualityAssurance"
+      name="Check if the wardroble is adequately polished"/>
+  <step xsi:type="assignment1:TransportStep"
+      name="Transport assembled wardrobe to inventory"/>
+  <step xsi:type="assignment1:ManufacturingStep"
+      name="Assembling Unit"
+      duration="5"
+      input="//@contains.0 //@contains.2 //@contains.3 //@contains.4 //@contains.5 //@contains.1"
+      output="//@contains.6"
+      responsible="//@employee.1"
+      end="//@step.5"/>
+  <contains
+      xsi:type="assignment1:WorkPiece"
+      name="Side shelves"/>
+  <contains
+      xsi:type="assignment1:BinaryExpression">
+    <lhs xsi:type="assignment1:WorkPiece"
+        name="Raw Wood"
+        type="wood"/>
+    <rhs xsi:type="assignment1:WorkPiece"
+        name="Raw Iron"
+        type="Iron"/>
+  </contains>
+  <contains
+      xsi:type="assignment1:WorkPiece"
+      name="Metal rod"/>
+  <contains
+      xsi:type="assignment1:WorkPiece"
+      name="Main cabinet"/>
+  <contains
+      xsi:type="assignment1:WorkPiece"
+      name="Shoe rack"/>
+  <contains
+      xsi:type="assignment1:WorkPiece"
+      name="Door"/>
+  <contains
+      xsi:type="assignment1:WorkPiece"
+      name="Wardrobe"/>
+</assignment1:ManufacturingSystem>
