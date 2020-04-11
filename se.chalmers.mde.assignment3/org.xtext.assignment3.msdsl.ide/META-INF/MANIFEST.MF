@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.xtext.assignment3.msdsl.ide
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.assignment3.msdsl.ide
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.xtext.assignment3.msdsl.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.xtext.assignment3.msdsl,
+ se.chalmers.mde.assignment3,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-10
+Export-Package: org.xtext.assignment3.msdsl.ide.contentassist.antlr,
+ org.xtext.assignment3.msdsl.ide.contentassist.antlr.internal

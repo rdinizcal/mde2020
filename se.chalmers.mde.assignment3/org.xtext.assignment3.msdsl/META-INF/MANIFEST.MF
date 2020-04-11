@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.xtext.assignment3.msdsl
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.assignment3.msdsl
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.xtext.assignment3.msdsl; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: se.chalmers.mde.assignment3,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib;bundle-version="2.14.0",
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-10
+Export-Package: org.xtext.assignment3.msdsl.parser.antlr,
+ org.xtext.assignment3.msdsl.parser.antlr.internal,
+ org.xtext.assignment3.msdsl.serializer,
+ org.xtext.assignment3.msdsl.validation,
+ org.xtext.assignment3.msdsl.services,
+ org.xtext.assignment3.msdsl,
+ org.xtext.assignment3.msdsl.generator,
+ org.xtext.assignment3.msdsl.formatting2,
+ org.xtext.assignment3.msdsl.scoping
+Import-Package: org.apache.log4j
